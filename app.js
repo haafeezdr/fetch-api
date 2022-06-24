@@ -39,7 +39,7 @@
 
   // get from external Api  
   function getJson() {
-    fetch('post.json')
+    fetch('https://api.github.com/users')
     .then(function(res){
         return res.json();
     })
