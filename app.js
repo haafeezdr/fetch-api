@@ -38,7 +38,7 @@
  }
 
   // get from external Api  
-  function getJson() {
+  function getExternal() {
     fetch('https://api.github.com/users')
     .then(function(res){
         return res.json();
@@ -46,8 +46,8 @@
     .then(function(data) {
         console.log(data);
         let output = '';
-        data.forEach(function(post) {
-          output += `<li>${post.title}</li>`;  
+        data.forEach(function(user) {
+          output += `<li>${user.login}</li>`;  
         });
         document.getElementById('output').innerHTML = output;
     })
