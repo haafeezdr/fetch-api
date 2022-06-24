@@ -7,24 +7,18 @@
  // get local text data
  function getText() {
     fetch('text.txt')
-    .then(function(res){
-        return res.text();
-    })
-    .then(function(data) {
+    .then(res => res.text())
+    .then(data => {
         console.log(data);
          document.getElementById('output').innerHTML = data;
     })
-    .catch(function(err){
-        console.log(err);
-    });
+    .catch(err => console.log(err));
  }
  // get local json data
  function getJson() {
     fetch('post.json')
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(data) {
+    .then(res => res.json())
+    .then(data => {
         console.log(data);
         let output = '';
         data.forEach(function(post) {
@@ -32,18 +26,14 @@
         });
         document.getElementById('output').innerHTML = output;
     })
-    .catch(function(err){
-        console.log(err);
-    });
+    .catch(err => console.log(err));
  }
 
   // get from external Api  
   function getExternal() {
     fetch('https://api.github.com/users')
-    .then(function(res){
-        return res.json();
-    })
-    .then(function(data) {
+    .then(res => res.json())
+    .then(data => {
         console.log(data);
         let output = '';
         data.forEach(function(user) {
@@ -51,7 +41,5 @@
         });
         document.getElementById('output').innerHTML = output;
     })
-    .catch(function(err){
-        console.log(err);
-    });
+    .catch(err => console.log(err));
  }
